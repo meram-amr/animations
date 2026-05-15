@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to right, #f492f0, #a18dce);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    background: #ededed;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+}
+
+.clock {
+    position: relative;
+    width: 380px;
+    height: 380px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hour,
+.minute,
+.second {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 20px;
+    transform-origin: left center;
+    transform: rotate(-90deg);
+    transition: all 0.05s ease-in-out;
+}
+
+.hour {
+    width: 180px;
+    height: 7px;
+    background: #a18dce;
+    position: absolute;
+    animation-name: rotate;
+    animation-duration: 43200s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.minute {
+    width: 140px;
+    height: 6px;
+    background: #f492f0;
+    position: absolute;
+    animation-name: rotate;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.second {
+    width: 100px;
+    height: 5px;
+    background: rgb(163, 163, 163);
+    position: absolute;
+    animation-name: rotate;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.center {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #2a2a2a;
+    border-radius: 50%;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(-90deg);
+    }
+
+    to {
+        transform: rotate(270deg);
+    }
+}
