@@ -4,23 +4,41 @@
 }
 
 body {
-    background: linear-gradient(to right, #f492f0, #a18dce);
+    background: linear-gradient(to right, #9bafd9, #103783);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    position: relative;
+    gap: 50px;
+}
+
+h1 {
+    position: absolute;
+    top: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #000000;
+    font-weight: bold;
 }
 
 .container {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    width: 700px;
     height: 500px;
-    background: #ededed;
+    background: #e6e6e6;
     border-radius: 25px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: absolute;
+    margin-bottom: 20px;
 }
 
 .clock {
@@ -33,6 +51,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 
 .hour,
@@ -50,7 +69,7 @@ body {
 .hour {
     width: 180px;
     height: 7px;
-    background: #a18dce;
+    background: #000000;
     position: absolute;
     animation-name: rotate;
     animation-duration: 43200s;
@@ -61,7 +80,7 @@ body {
 .minute {
     width: 140px;
     height: 6px;
-    background: #f492f0;
+    background: #103783;
     position: absolute;
     animation-name: rotate;
     animation-duration: 3600s;
@@ -72,7 +91,7 @@ body {
 .second {
     width: 100px;
     height: 5px;
-    background: rgb(163, 163, 163);
+    background: rgb(123, 123, 123);
     position: absolute;
     animation-name: rotate;
     animation-duration: 60s;
@@ -95,5 +114,147 @@ body {
 
     to {
         transform: rotate(270deg);
+    }
+}
+
+.card {
+    width: 350px;
+    height: 420px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+.card:hover {
+    transform: rotate(-5deg);
+    transition: all 0.3s ease-in-out;
+
+    p {
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+    }
+
+    h2 {
+        transform: translateY(5px);
+        transition: all 0.3s ease-in-out;
+    }
+
+    button {
+        transition: all 0.3s ease-in-out;
+        transform: translateY(-10px);
+    }
+}
+
+img {
+    width: 300px;
+    height: 280px;
+    margin: 15px 25px 0 25px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+img:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+h2 {
+    font-family: 'Arial', sans-serif;
+    color: #000000;
+    font-weight: bold;
+    margin-top: 2px;
+    text-align: center;
+    transform: translateY(-30px);
+}
+
+p {
+    font-family: 'Arial', sans-serif;
+    color: #103783;
+    text-align: center;
+    margin-top: 5px;
+    opacity: 0;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #103783;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 15px;
+    transform: translateY(-30px);
+    width: 90%;
+    text-decoration: none;
+}
+
+button:hover {
+    background: #001163;
+    transition: all 0.3s ease-in-out;
+}
+
+.loading-animation {
+    width: 350px;
+    height: 400px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.load {
+    display: flex;
+    gap: 20px;
+}
+
+span {
+    font-size: 20px;
+    color: #fff;
+    background: #103783;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: loading;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 0.5;
     }
 }
